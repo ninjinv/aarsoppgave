@@ -1,0 +1,104 @@
+{ 
+    "Characters": {
+        "npc1": {
+        	"Happy": "img/giveuup.png",
+        	"Thinking": "character_thinking/npc1.png",
+        	"Peeved": "character_peeved/npc1.png"
+        },
+        "npc2": {
+        	"Happy": "character_happy/npc2.png",
+        	"Thinking": "character_thinking/npc2.png",
+        	"Peeved": "character_peeved/npc2.png"
+        },
+
+		"narrator": {
+        	"Happy": "character_happy/npc2.png",
+        	"Thinking": "character_thinking/npc2.png",
+        	"Peeved": "character_peeved/npc2.png"
+        },
+
+        "npc3": {
+        	"Happy": "character_happy/npc3.png",
+        	"Thinking": "character_thinking/npc3.png",
+        	"Peeved": "character_peeved/npc3.png"
+        }
+    },
+    
+    "Scene1": {
+    	"Background": "",
+    	"PAGES": {
+			"Page0" : {
+				"Character": "npc1",
+				"Sprite": "Happy",
+				"PageText": "dialogue1"
+				
+			},
+			"Page1" : {
+				"Character": "npc1",
+				"Sprite": "Happy",
+				"PageText": "dialogue2"
+				
+			},
+			"Page2" : {
+				"Character": "npc2",
+				"Sprite": "Peeved",
+				"PageText": "dialogue3"
+				
+			},
+			"Page3" : {
+				"Character": "npc3",
+				"Sprite": "Peeved",
+				"PageText": "dialogue4"
+				
+			},
+			"Page4" : {
+				"Character": "np2",
+				"Sprite": "Happy",
+				"PageText": "dialogue5"
+				
+			},
+			"Page5" : {
+				"Character": "npc2",
+				"Sprite": "Thinking",
+				"PageText": "..."
+				
+			},
+			"Page6" : {
+				"Character": "npc1",
+				"Sprite": "Peeved",
+				"PageText": "........."
+				
+			},
+			"Page7" : {
+				"Character": "npc2",
+				"Sprite": "Happy",
+				"PageText": "dialogue6"
+				
+			},
+			"Page8" : {
+				"Character": "npc1",
+				"Sprite": "Thinking",
+				"PageText": "dialogue7"
+				
+			},
+			"Page9" : {
+				"Character": "narrator",
+				"Sprite": "Rest",
+				"PageText": "choose:",
+				"Options": {
+					"Finish?": "Page10",
+					"Restart?": "Page0",
+					"s": "Page8" 
+				}
+				
+			},
+			"Page10" : {
+				"Character": "Me",
+				"Sprite": "Thinking",
+				"PageText": "Thank you for reading!",
+				"NextPage": "End"
+				
+			}
+		}
+    }
+}

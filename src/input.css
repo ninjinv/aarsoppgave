@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://use.typekit.net/hdm5fer.css");
+
+* {
+    box-sizing: border-box;
+}
+
+.btn {
+    background-image: linear-gradient(to right, #ffffff, #000000);
+    border-radius: 20px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+.btn:active {
+    opacity: 0.8;
+}
+
+.modal {
+    background-color: rgba(0, 0,0, 0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3 ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-open{
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal-inner{
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0,0, 0.3);
+}
+
+.modal-inner h2 {
+    line-height: 24px;
+    margin: 10px 0;
+}
