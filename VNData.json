@@ -83,22 +83,35 @@
 			},
 			"Page9" : {
 				"Character": "narrator",
-				"Sprite": "Rest",
+				"Sprite": "Peeved",
 				"PageText": "choose:",
 				"Options": {
 					"Finish?": "Page10",
 					"Restart?": "Page0",
-					"s": "Page8" 
+					"s": "Page4" 
 				}
 				
 			},
 			"Page10" : {
-				"Character": "Me",
+				"Character": "narrator",
 				"Sprite": "Thinking",
 				"PageText": "Thank you for reading!",
 				"NextPage": "End"
 				
 			}
 		}
-    }
+    },
+
+	"Scene2": {
+		"Background": "",
+		"PAGES": {
+		
+			"Page0" : {
+				"Character": "npc1",
+				"Sprite": "Happy",
+				"PageText": "dialogue1"
+				
+			}
+		}
+	}
 }

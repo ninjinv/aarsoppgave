@@ -1,5 +1,14 @@
 <?php
+
   require_once 'config.php';
+  include 'include/db.connection.php';
+// Start the session
+if(isset($_SESSION['username'])){ 
+  $username = $_SESSION['username'];
+  header('location:mainpage.php');
+} else {
+  
+}
 ?>
 
 <!doctype html>
@@ -157,7 +166,7 @@
 
 
 
-<script src="script.js"></script>
+<script type="text/javascript" src="script.js"></script>
 
 
 </body>

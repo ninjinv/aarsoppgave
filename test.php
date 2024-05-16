@@ -3,12 +3,7 @@
 require_once 'config.php';
 include 'include/db.connection.php';
 
-// Start the session
-if(isset($_SESSION['username'])){ 
-  $username = $_SESSION['username'];
-} else {
-  header('location:index.php');
-}
+
 
 // Fetch FAQ entries from the database
 $faqEntries = $pdo->query("SELECT * FROM faq")->fetchAll(PDO::FETCH_ASSOC);
@@ -20,8 +15,7 @@ $faqEntries = $pdo->query("SELECT * FROM faq")->fetchAll(PDO::FETCH_ASSOC);
 
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="./src/output.css" rel="stylesheet">
-  <link href="./src/input.css" rel="stylesheet">
+
 </head>
 
 <body class="bg-orange-50">
@@ -90,42 +84,35 @@ $faqEntries = $pdo->query("SELECT * FROM faq")->fetchAll(PDO::FETCH_ASSOC);
     </div>
   </header>
 
-  <div class="container mx-auto px-6 lg:px-8">
+  <!-- Innhold ellerno -->
+  <div class="relative isolate px-6 pt-0 lg:px-8">
+    
     <div class="mx-auto max-w-2xl py-12 sm:py-24 lg:py-20">
-        <div class="hidden sm:flex sm:justify-center mb-8">
-            <div class="rounded-full px-3 py-1 text-sm leading-6 text-gray-900 ring-1 ring-gray-400 hover:ring-gray-900 bg-white">
-                Check leaderboard <a href="leaderboard.php" class="font-semibold text-indigo-600">here!<span
-                    aria-hidden="true">&rarr;</span></a>
-            </div>
+      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+        <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-900 ring-1 ring-gray-400 hover:ring-gray-900 bg-white">
+          Check leaderboard <a href="leaderboard.php" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>here!<span aria-hidden="true">&rarr;</span></a>
         </div>
-        <div class="text-center">
-            <!-- FAQ section -->
-            <div class="py-12">
-                <div class="max-w-4xl mx-auto">
-                    <div class="accordion" id="faqAccordion">
-                        <?php foreach ($faqEntries as $faq): ?>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading<?= $faq['id'] ?>">
-                                <button class="accordion-button collapsed" type="button" aria-expanded="false"
-                                    aria-controls="collapse<?= $faq['id'] ?>">
-                                    <?= $faq['question'] ?>
-                                </button>
-                            </h2>
-                            <div id="collapse<?= $faq['id'] ?>" class="accordion-collapse collapse"
-                                aria-labelledby="heading<?= $faq['id'] ?>">
-                                <div class="accordion-body" style="display: none;">
-                                    <?= $faq['answer'] ?>
-                                </div>
-                            </div>
+      </div>
+      <div class="text-center">
+        <div class="py-12">
+          <div class="max-w-4xl mx-auto">
+            <div class="accordion" id="faqAccordion">
+                <?php foreach ($faqEntries as $faq): ?>
+                    <div class="border rounded-md overflow-hidden shadow-lg mb-4">
+                        <div class="border-b bg-white px-4 py-3">
+                            <button class="w-full text-left font-semibold focus:outline-none accordion-header"><?= $faq['question'] ?></button>
                         </div>
-                        <?php endforeach; ?>
+                        <div class="px-4 py-3 collapse" style="display: none;">
+                            <?= $faq['answer'] ?>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
+  </div>
 
   <!-- Footer, contact whateva -->
   <footer class="text-white shadow bg-zinc-600">

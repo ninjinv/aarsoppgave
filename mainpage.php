@@ -8,9 +8,6 @@ if(isset($_SESSION['username'])){
 } else {
   header('location:index.php');
 }
-
-
-
 ?>
 
 <!doctype html>
@@ -140,6 +137,6 @@ if(isset($_SESSION['username'])){
 </footer>
 
 </div>
-
+<script type="text/javascript" src="script.js" id='VisualNovelEngine'></script>
 </body>
 </html>

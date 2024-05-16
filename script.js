@@ -10,36 +10,70 @@
 //     modal.classlist.remove("open");
 // });
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Hent alle accordion-header-elementer
+    const accordionButtons = document.querySelectorAll('.accordion-button');
+
+    // Legg til klikk-hendelseslytter på hvert accordion-header-element
+    accordionButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            // Finn det tilhørende collapse-elementet
+            const answer = button.parentElement.nextElementSibling;
+
+            console.log('Button:', button);
+            console.log('Answer:', answer);
+
+            // Bytt stil for å vise/skjule svar-elementet
+            if (answer.style.display === 'inline-block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'inline-block';
+            }
+        });
+    });
+});
+
 
 const vnData = 'VNData.json';
 
-// get html elements
+// get html elements simple stuff yadayada
 function getElements() {
     return {
         sprite: document.querySelector('#spritebox img'),
         name: document.querySelector('#namebox span'),
         text: document.querySelector('#textbox p'),
-        options: document.querySelector('#optionsbox button'),
+        options: document.querySelector('#optionsbox'),
         
     };
 }
 
 // funksjon som oppdaterer
+// Function to update elements on the page
 function updateElements(data) {
     const { sprite, name, text, options } = getElements();
+
+    console.log("data.options:", data.options); // check if options data is corrcect 
 
     sprite.src = data.spriteSrc;
     name.innerText = data.name;
     text.innerText = data.text;
 
-    options.innerHTML = '';
-    if (data.options && data.options.length) {
-        data.options.forEach(option => {
-            const button = document.createElement('button');
-            button.textContent = option.text;
-            button.onclick = option.callback;
-            options.appendChild(button);
-        });
+    if (options) {
+        options.innerHTML = '';
+        if (data.options && Object.keys(data.options).length) { // checks if there are data.options exist (on that page), convert into array
+            Object.keys(data.options).forEach(optionKey => { // return array w butons
+                console.log("creat button for:", optionKey); // console to check button create ting dong
+                const button = document.createElement('button');
+                button.textContent = optionKey; // sets buttoncontent to the optioncontent privided in my data
+                button.onclick = () => {
+                    currentPageIndex = Object.keys(jsonData.Scene1.PAGES).indexOf(data.options[optionKey]);
+                    showPage();
+                };
+                options.appendChild(button);
+            });
+        }
+    } else {
+        console.error('Options box not found in the DOM.');
     }
 }
 
@@ -65,39 +99,15 @@ function showPage() {
         options: currentPage.Options || [] // either shows them or no options
     });
 
+    typeWriter(currentPage.PageText);
         // document.getElementById('mainbox').style.backgroundImage = `url(${jsonData.Scene1.Background})`;
 }
 
+
 // options
 // option select
-function handleOptions(data) {
-    
-    document.getElementById('optionsbox').innerHTML = "";
 
-    // check if u have any options on that page.
-    if (jsonData.Scene1.PAGES[currentPageIndex].hasOwnProperty('Options')) {
-        // define thy options :3
-        let options = jsonData.Scene1.PAGES[currentPageIndex].Options;
 
-        
-        Object.keys(options).forEach(optionKey => {
-            // create new button
-            const button = document.createElement('button');
-            // Schanges text
-            button.textContent = optionKey;
-            // append  button to optionsbox so it goes in there lol
-            document.getElementById('optionsbox').appendChild(button);
-
-            // add eventlistener
-            button.addEventListener('click', () => {
-             
-                currentPageIndex = Object.keys(jsonData.Scene1.PAGES).indexOf(options[optionKey]);
-        
-                showPage();
-            });
-        });
-    }
-}
 
 
 // //create thy buttons
@@ -115,9 +125,13 @@ function handleOptions(data) {
 
 document.addEventListener('click', () => {
     const currentPage = jsonData.Scene1.PAGES[Object.keys(jsonData.Scene1.PAGES)[currentPageIndex]];
-    if (currentPage.Options || currentPage.NextPage !== "End") { // || means or so if options or next page is not end then go next
-        currentPageIndex++; // variable, go next
-        showPage(); // show new page
+    if (currentPage.Options) {
+        return; // if options, no go to next page 
+    }
+
+    if (currentPage.NextPage !== "End") { // not end, continue.
+        currentPageIndex++; // next
+        showPage(); // update pg
     }
 });
 

@@ -21,7 +21,7 @@
         <div class="flex lg:flex-1">
           <!-- Logo placeholder -->
           <a href="index.php" class="-m-1.5 p-1.5">
-            <span class="sr-only">urmom</span> <!-- Screenreader-only -->
+            <span class="sr-only">svg of logo. will redirect you to mainpage if clicked.</span> <!-- Screenreader-only -->
             <img class="h-8 w-auto" src="img/seal.gif" alt="#">
           </a>
         </div>
@@ -148,6 +148,6 @@
     </div>
 </footer>
 
-
+<script type="text/javascript" src="script.js" id='VisualNovelEngine'></script>
 </body>
 </html>

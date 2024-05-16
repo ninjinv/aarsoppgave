@@ -1,6 +1,7 @@
 <?php
   require_once 'config.php';
   include 'include/db.connection.php';
+  include 'include/chapter_fetch.php';
 
 
 if(isset($_SESSION['username'])){ 
@@ -116,8 +117,8 @@ if(isset($_SESSION['username'])){
               Options will be dynamically added here
           </div> -->
 
-          <div id="optionsbox" class="col-start-1 col-end-11 grid cols-12 gap-3">
-              <button>loading</button>
+          <div id="optionsbox" class="mt-4">
+              <!-- Buttons will be dynamically added here -->
           </div>
           
         </div>
