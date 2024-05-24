@@ -3,13 +3,11 @@
 require_once 'config.php';
 include 'include/db.connection.php';
 
-// Start the session
-session_start();
 
 if (isset($_SESSION['username'])) {
     $username = $_SESSION['username'];
 
-    // Check if the logged-in user is an admin
+    // sjekk admin
     try {
         $query = "SELECT role_id FROM users WHERE username = :username";
         $stmt = $pdo->prepare($query);
@@ -33,7 +31,7 @@ if (isset($_SESSION['username'])) {
 
 $jsonFile = 'VNData.json';
 
-// Read JSON data
+// les av json
 function readJson($file) {
     if (file_exists($file)) {
         $json = file_get_contents($file);
@@ -42,13 +40,13 @@ function readJson($file) {
     return [];
 }
 
-// Write JSON data
+// skriv
 function writeJson($file, $data) {
     $json = json_encode($data, JSON_PRETTY_PRINT);
     file_put_contents($file, $json);
 }
 
-// Handle form submission
+// form handle
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = $_POST['action'];
     $jsonData = readJson($jsonFile);
@@ -89,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit;
 }
 
-// Handle file upload
+// Handle fil upload
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['spriteFile'])) {
     $characterName = $_POST['characterName'];
     $emotion = $_POST['emotion'];
@@ -256,7 +254,7 @@ $jsonData = readJson($jsonFile);
             <div class="sm:flex sm:items-center sm:justify-between">
                 <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
                     <img src="img/seal.gif" class="h-8" alt="logo-placeholder" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">yourmom</span>
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">STduy or Cat Videos</span>
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-200">
                     <li>

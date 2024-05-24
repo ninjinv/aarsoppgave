@@ -33,7 +33,7 @@ if(isset($_SESSION['username'])){
       <div class="flex lg:flex-1">
         <!-- Logo placeholder -->
         <a href="index.php" class="-m-1.5 p-1.5">
-          <span class="sr-only">urmom</span> <!-- Screenreader-only -->
+          <span class="sr-only"></span> <!-- Screenreader-only -->
           <img class="h-8 w-auto" src="img/seal.gif" alt="#">
         </a>
       </div>
@@ -46,11 +46,11 @@ if(isset($_SESSION['username'])){
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
-          <a href="#" class="text-xl font-semibold leading-6 text-white">Credits</a>
-          <a href="#" class="text-xl font-semibold leading-6 text-white">FAQ</a>
-          <a href="#" class="text-xl font-semibold leading-6 text-white">Help</a>
-      </div>
+            <a href="tutorial.php" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
+            <a href="faq.php" class="text-xl font-semibold leading-6 text-white">FAQ</a>
+            <a href="game.php" class="text-xl font-semibold leading-6 text-white">Game</a>
+            <a href="profile.php" class="text-xl font-semibold leading-6 text-white">Profile</a>
+        </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <a href="loginpg.php" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
@@ -102,41 +102,32 @@ if(isset($_SESSION['username'])){
           Don't have an account yet?  <a href="registration.php" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>Sign up now!<span aria-hidden="true">&rarr;</span></a>
         </div>
       </div>
+
+
+      
       <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Domain expansion: infinite backshots</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua. ok info abt game hurray short summary blablaabl. miau something</p>
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Welcome to Study or Cat Videos</h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Here your goal is to pass the test, but somehow you will always be tempted to watch cat videos in class for no reason! Why? BEcause cats are cats, and cats are cute! Watch the video down to just see the premise of the story.</p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a href="loginpg.php" class="rounded-md bg-zinc-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 " >Log in</a>
           <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Sign up <span aria-hidden="true">→</span></a>
         </div>
       </div>
+      <video 
+            class="w-full mt-5 h-auto bg-white shadow-lg rounded-md flex justify-center"
+            controls>
+            <source src="src/introvis.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
+
   </div>
 </div>
 
-<!-- pop up window idk why not -->
-<div id="info-popup" tabindex="-1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
-  <div class="relative p-4 w-full max-w-lg h-full md:h-auto">
-      <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 md:p-8">
-          <div class="mb-4 text-sm font-light text-gray-500 dark:text-gray-400">
-              <h3 class="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Privacy info</h3>
-              <p>
-                  The backup created with this export functionnality may contain some sensitive data. We suggest you to save this archive in a securised location.
-              </p>
-          </div>
-          <div class="justify-between items-center pt-0 space-y-4 sm:flex sm:space-y-0">
-              <a href="#" class="font-medium text-primary-600 dark:text-primary-500 hover:underline">Learn more about privacy</a>
-              <div class="items-center space-y-4 sm:space-x-4 sm:flex sm:space-y-0">
-                  <button id="close-modal" type="button"  class="py-2 px-4 w-full text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-200 sm:w-auto hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
-                  <button id="confirm-button" type="button" class="py-2 px-4 w-full text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-auto hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Confirm</button>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
+
 
 <!-- Footer, contact whateva -->
-<footer class="text-white shadow  bg-zinc-600">
+<footer class="text-white shadow  bg-zinc-600 b-0">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
     <div class="sm:flex sm:items-center sm:justify-between">
       <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -160,7 +151,7 @@ if(isset($_SESSION['username'])){
         </ul>
       </div>
     <hr class="my-3 border-gray-200 sm:mx-auto  dark:border-white lg:my-3" />
-      <span class="text-sm text-white sm:text-center dark:text-gray-200">© C for Cat miau <a href="#" class="hover:underline">Yourmom™</a>. All Rights Reserved. </span>
+      <span class="text-sm text-white sm:text-center dark:text-gray-200">© C for Cat miau <a href="#" class="hover:underline">Study or Cat Videos™</a>. All Rights Reserved. </span>
     </div>
 </footer>
 

@@ -42,11 +42,10 @@ if(isset($_SESSION['username'])){
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Credits</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">FAQ</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Help</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Profile</a>
+            <a href="tutorial.php" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
+            <a href="faq.php" class="text-xl font-semibold leading-6 text-white">FAQ</a>
+            <a href="game.php" class="text-xl font-semibold leading-6 text-white">Game</a>
+            <a href="profile.php" class="text-xl font-semibold leading-6 text-white">Profile</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="include/logout.php" class="text-sm font-semibold leading-6 text-white">Log out <span aria-hidden="true">&rarr;</span></a>
@@ -108,7 +107,7 @@ if(isset($_SESSION['username'])){
 
 
 <!-- Footer, contact whateva -->
-<footer class="text-white shadow  bg-zinc-600">
+<footer class="text-white shadow  bg-zinc-600 b-0">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
     <div class="sm:flex sm:items-center sm:justify-between">
       <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -132,7 +131,7 @@ if(isset($_SESSION['username'])){
         </ul>
       </div>
     <hr class="my-3 border-gray-200 sm:mx-auto  dark:border-white lg:my-3" />
-      <span class="text-sm text-white sm:text-center dark:text-gray-200">© C for Cat miau <a href="#" class="hover:underline">Yourmom™</a>. All Rights Reserved. </span>
+      <span class="text-sm text-white sm:text-center dark:text-gray-200">© C for Cat miau <a href="#" class="hover:underline">Study or Cat Videos™</a>. All Rights Reserved. </span>
     </div>
 </footer>
 

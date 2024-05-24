@@ -59,7 +59,7 @@
         <div class="hidden lg:flex lg:gap-x-12">
             <a href="tutorial.php" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
             <a href="faq.php" class="text-xl font-semibold leading-6 text-white">FAQ</a>
-            <a href="help.php" class="text-xl font-semibold leading-6 text-white">Help</a>
+            <a href="game.php" class="text-xl font-semibold leading-6 text-white">Game</a>
             <a href="profile.php" class="text-xl font-semibold leading-6 text-white">Profile</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">

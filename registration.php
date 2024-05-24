@@ -32,10 +32,10 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-          <a href="#" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
-          <a href="#" class="text-xl font-semibold leading-6 text-white">Credits</a>
-          <a href="#" class="text-xl font-semibold leading-6 text-white">FAQ</a>
-          <a href="#" class="text-xl font-semibold leading-6 text-white">Help</a>
+            <a href="tutorial.php" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
+            <a href="faq.php" class="text-xl font-semibold leading-6 text-white">FAQ</a>
+            <a href="game.php" class="text-xl font-semibold leading-6 text-white">Game</a>
+            <a href="profile.php" class="text-xl font-semibold leading-6 text-white">Profile</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="loginpg.php" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
@@ -49,8 +49,8 @@
         <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span> <!-- Screenreader-only -->
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+              <span class="sr-only">Logo </span> <!-- Screenreader-only -->
+              <img class="h-8 w-auto" src="" alt="">
             </a>
             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
               <span class="sr-only">Close menu</span> <!-- Screenreader-only -->
@@ -141,7 +141,7 @@
     <div class="sm:flex sm:items-center sm:justify-between">
       <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
           <img src="img/seal.gif" class="h-8" alt="logo-placeholder" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">yourmom</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Study or Cat Videos</span>
       </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-200">
           <li>
