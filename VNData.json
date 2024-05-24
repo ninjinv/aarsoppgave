@@ -1,117 +1,224 @@
-{ 
+{
     "Characters": {
-        "npc1": {
-        	"Happy": "img/giveuup.png",
-        	"Thinking": "character_thinking/npc1.png",
-        	"Peeved": "character_peeved/npc1.png"
+        "Emma": {
+            "Happy": "img/emma_happy.png",
+            "Thinking": "img/emma_thinking.png",
+            "Peeved": "img/emma_peeved.png"
         },
-        "npc2": {
-        	"Happy": "character_happy/npc2.png",
-        	"Thinking": "character_thinking/npc2.png",
-        	"Peeved": "character_peeved/npc2.png"
+        "Liam": {
+            "Happy": "img/liam_happy.png",
+            "Thinking": "img/liam_thinking.png",
+            "Peeved": "img/liam_peeved.png"
         },
-
-		"narrator": {
-        	"Happy": "character_happy/npc2.png",
-        	"Thinking": "character_thinking/npc2.png",
-        	"Peeved": "character_peeved/npc2.png"
+        "Me": {
+            "Happy": "img/me_happy.png",
+            "Thinking": "img/me_thinking.png",
+            "Peeved": "img/me_peeved.png"
         },
-
-        "npc3": {
-        	"Happy": "character_happy/npc3.png",
-        	"Thinking": "character_thinking/npc3.png",
-        	"Peeved": "character_peeved/npc3.png"
+        "Teacher": {
+            "Happy": "img/teacher_happy.png",
+            "Thinking": "img/teacher_thinking.png",
+            "Peeved": "img/teacher_peeved.png"
         }
     },
-    
     "Scene1": {
-    	"Background": "",
-    	"PAGES": {
-			"Page0" : {
-				"Character": "npc1",
-				"Sprite": "Happy",
-				"PageText": "dialogue1"
-				
-			},
-			"Page1" : {
-				"Character": "npc1",
-				"Sprite": "Happy",
-				"PageText": "dialogue2"
-				
-			},
-			"Page2" : {
-				"Character": "npc2",
-				"Sprite": "Peeved",
-				"PageText": "dialogue3"
-				
-			},
-			"Page3" : {
-				"Character": "npc3",
-				"Sprite": "Peeved",
-				"PageText": "dialogue4"
-				
-			},
-			"Page4" : {
-				"Character": "np2",
-				"Sprite": "Happy",
-				"PageText": "dialogue5"
-				
-			},
-			"Page5" : {
-				"Character": "npc2",
-				"Sprite": "Thinking",
-				"PageText": "..."
-				
-			},
-			"Page6" : {
-				"Character": "npc1",
-				"Sprite": "Peeved",
-				"PageText": "........."
-				
-			},
-			"Page7" : {
-				"Character": "npc2",
-				"Sprite": "Happy",
-				"PageText": "dialogue6"
-				
-			},
-			"Page8" : {
-				"Character": "npc1",
-				"Sprite": "Thinking",
-				"PageText": "dialogue7"
-				
-			},
-			"Page9" : {
-				"Character": "narrator",
-				"Sprite": "Peeved",
-				"PageText": "choose:",
-				"Options": {
-					"Finish?": "Page10",
-					"Restart?": "Page0",
-					"s": "Page4" 
-				}
-				
-			},
-			"Page10" : {
-				"Character": "narrator",
-				"Sprite": "Thinking",
-				"PageText": "Thank you for reading!",
-				"NextPage": "End"
-				
-			}
-		}
-    },
-
-	"Scene2": {
-		"Background": "",
-		"PAGES": {
-		
-			"Page0" : {
-				"Character": "npc1",
-				"Sprite": "Happy",
-				"PageText": "dialogue1"
-				
-			}
-		}
-	}
+        "Background": "img/school_background.png",
+        "PAGES": {
+            "Page0": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "It's another typical day at school. I've got a test coming up, but I can't seem to focus.",
+                "Options": {
+                    "Ask Liam for Help": "Page1",
+                    "Watch Cat Videos": "Page2"
+                }
+            },
+            "Page1": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "Liam always seems to have a good grasp on things. Maybe he can help me out.",
+                "NextPage": "Page3"
+            },
+            "Page2": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "Cat videos always manage to cheer me up. Maybe a quick break will help me clear my mind.",
+                "NextPage": "Page3"
+            },
+            "Page3": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "As I'm pondering my options, Emma approaches me with a worried expression on her face.",
+                "NextPage": "Page4"
+            },
+            "Page4": {
+                "Character": "Emma",
+                "Sprite": "Happy",
+                "PageText": "Hey, Me! Are you ready for the test tomorrow? I'm so nervous!",
+                "Options": {
+                    "Offer to Study Together": "Page5",
+                    "Assure Emma Everything Will Be Fine": "Page6"
+                }
+            },
+            "Page5": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "Sure, Emma! Let's study together. We'll ace this test!",
+                "NextPage": "Page7"
+            },
+            "Page6": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "Don't worry, Emma! We've got this. We'll help each other out and do great!",
+                "NextPage": "Page7"
+            },
+            "Page7": {
+                "Character": "Liam",
+                "Sprite": "Happy",
+                "PageText": "Hey, guys! What's up? Ready to tackle that test head-on?",
+                "Options": {
+                    "Agree with Liam": "Page8",
+                    "Express Some Doubt": "Page9"
+                }
+            },
+            "Page8": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "Absolutely, Liam! We've put in the work, and now it's time to shine!",
+                "NextPage": "Page10"
+            },
+            "Page9": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "I hope so, Liam! I'm feeling a little nervous, to be honest.",
+                "NextPage": "Page10"
+            },
+            "Page10": {
+                "Character": "Teacher",
+                "Sprite": "Happy",
+                "PageText": "Alright, class! Time's up. Please pass your papers to the front. Good luck, everyone!",
+                "NextPage": "Page11"
+            },
+            "Page11": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "As I hand in my test paper, I can't help but feel grateful for my friends' support. Together, we can overcome any challenge.",
+                "NextPage": "Page12"
+            },
+            "Page12": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "With that test behind me, I'm ready to face whatever else school throws my way!",
+                "NextPage": "Page13"
+            },
+            "Page13": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "Later that day, during lunch break, Liam approaches me with a curious look on his face.",
+                "NextPage": "Page14"
+            },
+            "Page14": {
+                "Character": "Liam",
+                "Sprite": "Happy",
+                "PageText": "Hey, Me! Have you heard about the science fair coming up? I was thinking we could team up and build something cool!",
+                "Options": {
+                    "Agree to Team Up": "Page15",
+                    "Decline Politely": "Page16"
+                }
+            },
+            "Page15": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "That sounds awesome, Liam! Let's do it! I've got a few ideas already.",
+                "NextPage": "Page17"
+            },
+            "Page16": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "I appreciate the offer, Liam, but I've got a lot on my plate right now. Maybe next time?",
+                "NextPage": "Page17"
+            },
+            "Page17": {
+                "Character": "Emma",
+                "Sprite": "Happy",
+                "PageText": "Hey, Me! I heard about the science fair too. Count me in! We'll make an unbeatable team!",
+                "Options": {
+                    "Express Excitement": "Page18",
+                    "Express Some Doubt": "Page19"
+                }
+            },
+            "Page18": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "That's the spirit, Emma! With all of us working together, we'll definitely win!",
+                "NextPage": "Page20"
+            },
+            "Page19": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "I'm not so sure, Emma. It seems like a big project, and we only have so much time.",
+                "NextPage": "Page20"
+            },
+            "Page20": {
+                "Character": "Teacher",
+                "Sprite": "Happy",
+                "PageText": "Attention, students! The deadline for science fair project proposals is approaching fast. Make sure to submit your ideas by the end of the week!",
+                "NextPage": "Page21"
+            },
+			"Page21": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "With the science fair project on the horizon, I realize that I'll need to manage my time wisely to succeed.",
+                "NextPage": "Page22"
+            },
+            "Page22": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "But with the support of my friends and a positive attitude, I know we can accomplish anything.",
+                "NextPage": "Page23"
+            },
+            "Page23": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "The next few days are a whirlwind of planning, brainstorming, and experimenting.",
+                "NextPage": "Page24"
+            },
+            "Page24": {
+                "Character": "Me",
+                "Sprite": "Thinking",
+                "PageText": "We spend countless hours after school, pouring our hearts into our science fair project.",
+                "NextPage": "Page25"
+            },
+            "Page25": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "Finally, the day of the science fair arrives. Our project looks amazing, thanks to our hard work and dedication.",
+                "NextPage": "Page26"
+            },
+            "Page26": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "As the judges evaluate our project, I can't help but feel proud of what we've accomplished together.",
+                "NextPage": "Page27"
+            },
+            "Page27": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "The winners are announced, and to our delight, our team's project takes first place!",
+                "NextPage": "Page28"
+            },
+            "Page28": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "As we celebrate our victory, I'm filled with gratitude for my friends' unwavering support and encouragement.",
+                "NextPage": "Page29"
+            },
+            "Page29": {
+                "Character": "Me",
+                "Sprite": "Happy",
+                "PageText": "With the science fair behind us, I look forward to the next challenge that awaits. Together, there's nothing we can't achieve!",
+                "NextPage": "End"
+            }
+        }
+    }
 }

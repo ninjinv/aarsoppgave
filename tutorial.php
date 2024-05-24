@@ -1,13 +1,16 @@
 <?php
 
-  require_once 'config.php';
-  include 'include/db.connection.php';
-// Start the session
-if(isset($_SESSION['username'])){ 
-  $username = $_SESSION['username'];
-} else {
-  header('location:index.php');
-}
+//   require_once 'config.php';
+//   include 'include/db.connection.php';
+// // Start the session
+// if(isset($_SESSION['username'])){ 
+//   $username = $_SESSION['username'];
+// } else {
+//   header('location:index.php');
+// }
+
+
+
 ?>
 
 <!doctype html>
@@ -29,7 +32,7 @@ if(isset($_SESSION['username'])){
         <div class="flex lg:flex-1">
           <!-- Logo placeholder -->
           <a href="mainpage.php" class="-m-1.5 p-1.5">
-            <span class="sr-only">logo</span> <!-- Screenreader-only -->
+            <span class="sr-only">urmom</span> <!-- Screenreader-only -->
             <img class="h-8 w-auto" src="#" alt="#">
           </a>
         </div>
@@ -85,26 +88,18 @@ if(isset($_SESSION['username'])){
           </div>
         </div>
       </div>
-    </header>
+  </header>
 
-<!-- Innhold ellerno -->
-  <div class="relative isolate px-6 pt-0 lg:px-8">
-    
-    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-36">
-      <div class="hidden sm:mb-8 sm:flex sm:justify-center">
-        <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-900 ring-1 ring-gray-400 hover:ring-gray-900 bg-white">
-        Check leaderboard <a href="leaderboard.php" class="font-semibold text-indigo-600"><span class="absolute inset-0" aria-hidden="true"></span>here!<span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
-      <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Welcome back <?php echo $username; ?></h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Play right now!</p>
-        <div class="mt-10 flex items-center justify-center gap-x-6">
-          <a href="game.php" class="rounded-md bg-zinc-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 " >Play Now!</a>
-        </div>
-      </div>
-    </div>
+<!-- Innhold  -->
+<div class="relative isolate px-6 pt-0 lg:px-8">
+  <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-36">
+    <h2>Sluttbruker guide</h2>
+    <a href="brukerveiledning_sluttbruker.pdf" target="_blank">Download Sluttbruker guide</a>
+    <h2>IT_lærling guide</h2>
+    <a href="brukerveiledning_IT_laerling.pdf" target="_blank">Download IT_lærling guide</a>
   </div>
+</div>
+
 
 
 <!-- Footer, contact whateva -->

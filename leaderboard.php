@@ -158,7 +158,7 @@
     <div class="sm:flex sm:items-center sm:justify-between">
       <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
           <img src="img/seal.gif" class="h-8" alt="logo-placeholder" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">yourmom</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Study or Cat Videos</span>
       </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-200">
           <li>

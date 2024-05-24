@@ -3,14 +3,24 @@
   include 'include/db.connection.php';
   include 'include/chapter_fetch.php';
 
+  if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
 
-if(isset($_SESSION['username'])){ 
-  $username = $_SESSION['username'];
+    // Retrieve the saved page from the database
+    $query = "SELECT current_page FROM users WHERE username = ?";
+    $statement = $pdo->prepare($query);
+    $statement->execute([$username]);
+    $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($result) {
+        $currentPage = $result['current_page'];
+        // No need to redirect, just pass the current page to the JavaScript
+        echo "<script>const currentPageIndex = '$currentPage';</script>";
+    }
 } else {
-  header('location:index.php');
+    header('location:index.php');
+    exit(); // Exit if user is not logged in
 }
-
-
 ?>
 
 <!doctype html>
@@ -34,7 +44,7 @@ if(isset($_SESSION['username'])){
         <div class="flex lg:flex-1">
           <!-- Logo placeholder -->
           <a href="index.php" class="-m-1.5 p-1.5">
-            <span class="sr-only">urmom</span> <!-- Screenreader-only -->
+            <span class="sr-only">logo</span> <!-- Screenreader-only -->
             <img class="h-8 w-auto" src="img/seal.gif" alt="#">
           </a>
         </div>
@@ -47,78 +57,37 @@ if(isset($_SESSION['username'])){
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Credits</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">FAQ</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Help</a>
-            <a href="#" class="text-xl font-semibold leading-6 text-white">Profile</a>
+            <a href="tutorial.php" class="text-xl font-semibold leading-6 text-white">Tutorial</a>
+            <a href="faq.php" class="text-xl font-semibold leading-6 text-white">FAQ</a>
+            <a href="help.php" class="text-xl font-semibold leading-6 text-white">Help</a>
+            <a href="profile.php" class="text-xl font-semibold leading-6 text-white">Profile</a>
         </div>
         <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="loginpg.php" class="text-sm font-semibold leading-6 text-white">Log in <span aria-hidden="true">&rarr;</span></a>
+          <a href="include/logout.php" class="text-sm font-semibold leading-6 text-white">Log out <span aria-hidden="true">&rarr;</span></a>
         </div>
       </nav>
 
-      <!-- Mobile menu, show/hide based on menu open state. -->  <!-- Background backdrop, show/hide based on slide-over state. -->
-      <!-- <div class="lg:hidden" role="dialog" aria-modal="true">
-       
-        <div class="fixed inset-0 z-50"></div>
-        <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="#" alt="urmom">
-            </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-              <span class="sr-only">Close menu</span>
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Tutorial</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Credits</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">FAQ</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Help</a>
-              </div>
-              <div class="py-6">
-                <a href="loginpg.php" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </header>
+      </header>
 
-<!-- Innhold ellerno på pc -->
+<!-- Innhold  -->
 
 <div class="relative">
   <div class="container m-auto grid grid-cols-12 grid-rows-6 gap-1 relative isolate px-6">
 
-    <div class="col-start-3 col-end-11 row-start-1 row-end-5 tile bg-orange-900 h-96 grid grid-cols-12 grid-rows-12 gap-5">
+    <div class="col-start-3 col-end-11 row-start-1 row-end-5 tile bg-gray-500 h-96 grid grid-cols-12 grid-rows-12 gap-5 p-3">
         <img class="object-fill col-start-1 col-end-12" src="#" alt="Do ma">
 
-        <div class="z-50 col-start-1 col-end-13 row-start-8 row-end-13 tile bg-neutral-500"> <!-- grid grid-cols-10 grid-rows-10 -->
-          <div id="spritebox" class="">
+        <div class="z-50 col-start-1 col-end-13 row-start-8 row-end-13 tile bg-white"> <!-- grid grid-cols-10 grid-rows-10 -->
+          <div id="spritebox" class="p-2">
               <img src="#" alt="character sprite/feeling">
           </div>
 
-          <div id="namebox">
+          <div id="namebox" class="p-2">
               <span>Loading...</span>
           </div>
 
-          <div id="textbox">
+          <div id="textbox" class="p-2">
               <p>Loading...</p>
-          </div>
-          
-          <!-- <div >
-              Options will be dynamically added here
-          </div> -->
-
-          <div id="optionsbox" class="mt-4">
-              <!-- Buttons will be dynamically added here -->
           </div>
           
         </div>
@@ -130,22 +99,19 @@ if(isset($_SESSION['username'])){
         <h3 class="text-center flex justify-center items-center ">Your stats:</h3>
         <div class="px-3">
           <table class="text-wrap">
-            <tr><td>urmom</td></tr>
-            <tr><td>urmom</td></tr>
-            <tr><td>urmom</td></tr>
-            <tr><td>urmom</td></tr>
-            <tr><td>urmom</td></tr>
-            <tr><td>moneee eeeeeey</td></tr>
+          <button id="saveProgressButton" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Save Progress
+          </button>
+
           </table>
         </div>
       </div>
     </div>
 
-    <div class="col-start-3 col-end-11 row-start-5 row-end-7 tile bg-orange-700 container m-auto grid cols-12 gap-3 p-5">
-          <div id="optionsbox" class="col-start-1 col-end-11 grid cols-12 gap-3">
-              <button class="p-2 col-start-1 col-end-3 tile bg-orange-500" onclick="wtf()">69sss</button>
-              <button class="p-2 col-start-5 col-end-7 tile bg-orange-500" onclick="wtf2()">urmom</button>
-          </div>
+    <div class="col-start-3 col-end-11 row-start-5 row-end-7 tile bg-gray-500 container m-auto grid cols-12 gap-3 p-5">
+          <div id="optionsbox"  class="col-start-1 col-end-11 grid cols-12 gap-3">
+              
+        </div>
         
     </div>        
     
@@ -159,15 +125,11 @@ if(isset($_SESSION['username'])){
     <div class="sm:flex sm:items-center sm:justify-between">
       <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
           <img src="img/seal.gif" class="h-8" alt="logo-placeholder" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">yourmom</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Study or Cat Videos</span>
       </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 dark:text-gray-200">
           <li>
-              <a href="#" class="hover:underline me-4 md:me-6">About</a>
-          </li>
-          <li>
-            
-              <a href="#" class="hover:underline me-4 md:me-6">FAQ</a>
+              <a href="faq.php" class="hover:underline me-4 md:me-6">FAQ</a>
           </li>
           <li>
               <a href="#" class="hover:underline me-4 md:me-6">Credits</a>

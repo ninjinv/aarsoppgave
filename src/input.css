@@ -53,12 +53,26 @@
     margin: 10px 0;
 }
 
-.accordion-body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+.accordion-collapse {
+    display: none;
 }
 
-.accordion-body.show {
-    max-height: 1000px; /* Adjust as needed */
+.accordion-collapse-display {
+    display: block !important;
+}
+
+.accordion-item {
+    margin-bottom: 2rem; 
+}
+
+.accordion-content {
+    margin-top: 1rem; 
+    
+}
+
+
+
+.accordion-button.active {
+    background-color: #f0f0f0; /* Endre bakgrunnsfarge for aktiv knapp */
+    color: #333; /* Endre tekstfarge for aktiv knapp */
 }

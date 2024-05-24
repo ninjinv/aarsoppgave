@@ -102,30 +102,27 @@ $faqEntries = $pdo->query("SELECT * FROM faq")->fetchAll(PDO::FETCH_ASSOC);
             <!-- FAQ section -->
             <div class="py-12">
                 <div class="max-w-4xl mx-auto">
-                    <div class="accordion" id="faqAccordion">
-                        <?php foreach ($faqEntries as $faq): ?>
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading<?= $faq['id'] ?>">
-                                <button class="accordion-button collapsed" type="button" aria-expanded="false"
-                                    aria-controls="collapse<?= $faq['id'] ?>">
-                                    <?= $faq['question'] ?>
-                                </button>
-                            </h2>
-                            <div id="collapse<?= $faq['id'] ?>" class="accordion-collapse collapse"
-                                aria-labelledby="heading<?= $faq['id'] ?>">
-                                <div class="accordion-body" style="display: none;">
-                                    <?= $faq['answer'] ?>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endforeach; ?>
-                    </div>
+                <div class="accordion" id="faqAccordion">
+    <?php foreach ($faqEntries as $faq): ?>
+    <div class="accordion-item bg-white border border-gray-300 rounded-md p-4 mb-4 transition-all duration-300">
+        <h2 class="accordion-header" id="heading<?= $faq['id'] ?>">
+            <button class="accordion-button text-left text-lg font-semibold" type="button" aria-expanded="false"
+                aria-controls="collapse<?= $faq['id'] ?>">
+                <?= $faq['question'] ?>
+            </button>
+        </h2>
+        <div id="collapse<?= $faq['id'] ?>" class="accordion-collapse border-t mt-2 mb-10 pt-2 hidden">
+            <?= $faq['answer'] ?>
+        </div>
+    </div>
+    <?php endforeach; ?>
+</div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 
   <!-- Footer, contact whateva -->
   <footer class="text-white shadow bg-zinc-600">
@@ -133,7 +130,7 @@ $faqEntries = $pdo->query("SELECT * FROM faq")->fetchAll(PDO::FETCH_ASSOC);
       <div class="sm:flex sm:items-center sm:justify-between">
         <a href="#" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
           <img src="img/seal.gif" class="h-8" alt="logo-placeholder" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">yourmom</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Study or Cat Videos</span>
         </a>
         <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-300 sm:mb-0 dark:text-gray-200">
           <li>
@@ -154,7 +151,6 @@ $faqEntries = $pdo->query("SELECT * FROM faq")->fetchAll(PDO::FETCH_ASSOC);
       <span class="text-sm text-white sm:text-center dark:text-gray-200">© C for Cat miau <a href="#" class="hover:underline">Yourmom™</a>. All Rights Reserved. </span>
     </div>
   </footer>
-
 
   <script type="text/javascript" src="script.js" id='VisualNovelEngine'></script>
 </body>
