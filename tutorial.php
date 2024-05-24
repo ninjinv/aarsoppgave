@@ -113,7 +113,7 @@
         <div class="mt-8 space-y-6">
           <div>
             <h3 class="text-2xl font-semibold text-gray-700">Sluttbruker guide</h3>
-            <a href="brukerveiledning_sluttbruker.pdf" target="_blank" class="download-link inline-block mt-2 px-4 py-2 text-lg font-medium text-white bg-zinc-600 rounded-md hover:bg-amber-400 hover:text-gray-800 transition">Download Sluttbruker guide</a>
+            <a href="brukerveiledning/brukerveiledning_sluttbruker.pdf" target="_blank" class="download-link inline-block mt-2 px-4 py-2 text-lg font-medium text-white bg-zinc-600 rounded-md hover:bg-amber-400 hover:text-gray-800 transition">Download Sluttbruker guide</a>
           </div>
           <div>
             <h3 class="text-2xl font-semibold text-gray-700">IT_lærling guide</h3>
