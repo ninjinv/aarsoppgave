@@ -2,6 +2,8 @@
 
   require_once 'config.php';
   include 'include/db.connection.php';
+
+  session_start();
 // Start the session
 if(isset($_SESSION['username'])){ 
   $user = $_SESSION['username'];

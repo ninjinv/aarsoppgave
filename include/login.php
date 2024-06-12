@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 // Ensure this script is accessed via POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -46,4 +46,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Something went wrong, please try again! Error message: " . $e->getMessage();
     }
 }
-?>
