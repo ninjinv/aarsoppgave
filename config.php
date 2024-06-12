@@ -12,9 +12,9 @@ session_set_cookie_params([
     // lifetime, make sure cookies get destroyed after certain time, security
     'lifetime' => 1800, 
     // domain 
-    'domain' => 'localhost', // if online: example.com
+    'domain' => '10.2.2.214', // if online: example.com
     'path' => '/',
-    'secure' => true,// only run this cookie on a secure webside HTTPS
+    'secure' => false,// only run this cookie on a secure webside HTTPS
     'httponly' => true // restrict any sort of script from our client.
 ]);
 

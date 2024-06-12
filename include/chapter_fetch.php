@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) {
 
     try {
         // select chapter id from user lgined in
-        $query = "SELECT chapter_chapter_id FROM users WHERE username = :username";
+        $query = "SELECT current_page FROM users WHERE username = :username";
         $stmt = $pdo->prepare($query);
         $stmt->bindParam(':username', $username);
         $stmt->execute();

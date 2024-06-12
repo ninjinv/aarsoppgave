@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 // Ensure this script is accessed via POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

@@ -3,15 +3,13 @@
   require_once 'config.php';
   include 'include/db.connection.php';
 
-  error_reporting(E_ALL);
-ini_set('display_errors', 1);
-  session_start();
 // Start the session
 if(isset($_SESSION['username'])){ 
   $user = $_SESSION['username'];
 } else {
   header('location:index.php');
 }
+
 ?>
 
 <!doctype html>
