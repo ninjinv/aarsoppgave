@@ -25,12 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($user['role_id'] == 2) {
                     // User is an admin
+                    header("refresh:0; url=./changedia.php");
                     echo '<script>alert("Welcome, Admin!");</script>';
-                    header("Location: ./changedia.php");
                 } else {
                     // User is a regular player
+                    header("refresh:0; url=./mainpage.php");
                     echo '<script>alert("Welcome!");</script>';
-                    header("Location: ./mainpage.php");
                 }
                 exit;
             } else {
