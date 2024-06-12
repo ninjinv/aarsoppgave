@@ -4,7 +4,7 @@
   include 'include/db.connection.php';
 // Start the session
 if(isset($_SESSION['username'])){ 
-  $username = $_SESSION['username'];
+  $user = $_SESSION['username'];
 } else {
   header('location:index.php');
 }
@@ -96,7 +96,7 @@ if(isset($_SESSION['username'])){
         </div>
       </div>
       <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Welcome back <?php echo $username; ?></h1>
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Welcome back <?php echo $user; ?></h1>
         <p class="mt-6 text-lg leading-8 text-gray-600">Play right now!</p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a href="game.php" class="rounded-md bg-zinc-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-zinc-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400 " >Play Now!</a>
