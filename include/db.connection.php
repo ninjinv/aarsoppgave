@@ -4,7 +4,7 @@ $dsn = "mysql:host=localhost;
         dbname=aarsoppgave";
 
 $dbusername = "root";
-$dbpassword = "Test";
+$dbpassword = "";
 
 // $pdo = new PDO($dsn, $dbusername, $dbpassword); possible but run try to have error handlers.
 
